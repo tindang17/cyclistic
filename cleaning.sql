@@ -1,11 +1,5 @@
-SELECT
-  *
-FROM 
-  `unique-result-230022.cyclistic.all_trips`
-ORDER BY
-  started_at
-LIMIT 1000;
--- CLEAN AND PREPARE 2021_04 table
+
+-- Add ride_length column
 ALTER TABLE
   cyclistic.all_trips
 DROP COLUMN IF EXISTS
@@ -15,7 +9,8 @@ ALTER TABLE
   cyclistic.all_trips
 ADD COLUMN
   ride_length NUMERIC;
-
+  
+-- Populate ride_length column
 UPDATE
   cyclistic.all_trips
 SET
@@ -23,11 +18,12 @@ SET
 WHERE
   ride_length is not NULL AND ended_at >= started_at;
 
+-- Add day_of_week column
 ALTER TABLE
   cyclistic.all_trips
 ADD COLUMN IF NOT EXISTS
   day_of_week NUMERIC;
-
+-- Populate day_of_week column
 UPDATE
   cyclistic.all_trips
 SET
@@ -35,11 +31,13 @@ SET
 WHERE
   day_of_week is NULL;
 
+-- Add ride_month column
 ALTER TABLE
   cyclistic.all_trips
 ADD COLUMN IF NOT EXISTS
   ride_month NUMERIC;
 
+-- Populate ride_month column
 UPDATE
   cyclistic.all_trips
 SET
@@ -47,11 +45,12 @@ SET
 WHERE
   ride_month is NULL;
 
+-- Add ride_year column
 ALTER TABLE
   cyclistic.all_trips
 ADD COLUMN IF NOT EXISTS
   ride_year NUMERIC;
-
+-- Populate ride_year column
 UPDATE
   cyclistic.all_trips
 SET
