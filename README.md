@@ -8,3 +8,6 @@ Data cleaning, data manipulation, SQL, R, BigQuery and Tableau.
 ## Dataset
 https://divvy-tripdata.s3.amazonaws.com/index.html
 (Note: The datasets have a different name because Cyclistic is a fictional company. For the purposes of this case study, the datasets are appropriate and will enable you to answer the business questions. The data has been made available by Motivate International Inc. under this [license](https://ride.divvybikes.com/data-license-agreement).)
+
+## Report
+Complete report can be viewed [here](https://www.tindang17.com/cyclistic) 
